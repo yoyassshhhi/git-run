@@ -26,13 +26,8 @@ app.use(cors());
 app.use(express.json());
 
 // Define routes
-app.get('/api/signup', async (req, res) => {
-  await axios.get('http://localhost:3000/api/signup').then((res) => {
-    console.log(res);
-  }).catch((err) => {
-    console.log(err);
-  });
-  
+app.post('/api/signup', async (req, res) => {
+
   try {
     const { name, email, password } = req.body;
     console.log(name,email,password);
